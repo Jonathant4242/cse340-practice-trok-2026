@@ -1,0 +1,39 @@
+:root {
+    /* color-roots */
+    --primary-background-color: rgb(173, 216, 230);
+    --hover-color: rgb(0, 102, 204)
+
+    /* font-roots */
+    --primary-font: 'Arial', sans-serif;
+}
+
+html, body {
+    background-color: var(--primary-background-color);
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 20px;
+}
+
+body {
+    nav {
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+
+            &:hover {
+                color: var(--hover-color);
+            }
+        }
+    }
+}
