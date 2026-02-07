@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<main>
+  <h1>Something went wrong (500)</h1>
+  <p>We’re having technical difficulties. Please try again later.</p>
+  <img
+    src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbWtqeHpzZ29jNDhwNnR4NXExcWd3cHgxbGd1Y3h2YTNnNTE4MXkwMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/1RkDDoIVs3ntm/giphy.gif"
+    alt="Server error animation"
+    style="max-width: 100%; height: auto;"
+  />
+
+  <% if (NODE_ENV.includes('dev')) { %>
+    <details>
+      <summary>Error details (development only)</summary>
+      <pre><%= error?.stack || error %></pre>
+    </details>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %>
