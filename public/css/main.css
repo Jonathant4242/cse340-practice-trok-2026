@@ -1,20 +1,25 @@
 :root {
     /* color-roots */
     --primary-background-color: rgb(173, 216, 230);
-    --hover-color: rgb(0, 102, 204)
+    --hover-color: rgb(0, 102, 204);
+
+    /* theme backgrounds */
+    --bg-blue: rgb(173, 216, 230);
+    --bg-green: rgb(200, 235, 200);
+    --bg-red: rgb(245, 200, 200);
 
     /* font-roots */
     --primary-font: 'Arial', sans-serif;
 }
 
 html, body {
-    background-color: var(--primary-background-color);
     font-family: var(--primary-font);
     margin: 0;
     padding: 20px;
 }
 
 body {
+    background-color: var(--primary-background-color);
     nav {
         ul {
             list-style-type: none;
@@ -36,4 +41,21 @@ body {
             }
         }
     }
+}
+
+.greeting {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+body.blue-theme {
+  --primary-background-color: var(--bg-blue);
+}
+
+body.green-theme {
+  --primary-background-color: var(--bg-green);
+}
+
+body.red-theme {
+  --primary-background-color: var(--bg-red);
 }
