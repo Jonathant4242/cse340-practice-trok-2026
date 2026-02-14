@@ -1,0 +1,55 @@
+<%- include('../partials/header') %>
+
+<main>
+
+  <% if (!faculty) { %>
+    <section class="faculty-detail">
+      <h1>Faculty member not found</h1>
+      <div class="navigation">
+        <p><a href="/faculty<%= currentSort ? `?sort=${currentSort}` : '' %>">&larr; Back to Faculty Directory</a></p>
+      </div>
+    </section>
+  <% } else { %>
+    <section class="faculty-detail">
+      <header class="faculty-header">
+        <h1><%= faculty.name %></h1>
+        <p class="faculty-meta"><%= faculty.title %> • <%= faculty.department %></p>
+      </header>
+
+      <div class="faculty-info">
+        <div class="info-row">
+          <span class="label">Office:</span>
+          <span class="value"><%= faculty.office %></span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Phone:</span>
+          <span class="value">
+            <% if (faculty.phone) { %>
+              <a href="tel:<%= (faculty.phone || '').replace(/\D/g, '') %>"><%= faculty.phone %></a>
+            <% } else { %>
+              <span>N/A</span>
+            <% } %>
+          </span>
+        </div>
+
+        <div class="info-row">
+          <span class="label">Email:</span>
+          <span class="value">
+            <% if (faculty.email) { %>
+              <a href="mailto:<%= faculty.email %>"><%= faculty.email %></a>
+            <% } else { %>
+              <span>N/A</span>
+            <% } %>
+          </span>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <p><a href="/faculty<%= currentSort ? `?sort=${currentSort}` : '' %>">&larr; Back to Faculty Directory</a></p>
+      </div>
+    </section>
+  <% } %>
+</main>
+
+<%- include('../partials/footer') %>
